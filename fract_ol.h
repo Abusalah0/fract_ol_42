@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 01:04:41 by abdsalah          #+#    #+#             */
-/*   Updated: 2024/11/30 14:55:42 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 09:53:42 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,28 +40,15 @@ typedef struct s_complex
 	double		imag;
 }				t_complex;
 
-typedef struct s_img
-{
-	void		*img_ptr;
-	char		*pixels_ptr;
-	int			bpp;
-	int			endian;
-	int			line_len;
-}				t_img;
-
 typedef struct s_fractal
 {
 	char		*name;
-	void		*mlx_connection;
-	void		*mlx_window;
-	t_img		img;
 	double		shift_x;
 	double		shift_y;
 	double		zoom;
 	double		julia_re;
 	double		julia_im;
 	int			max_iter;
-	int			type;
 }				t_fractal;
 
 typedef struct s_graphics
@@ -76,15 +63,15 @@ typedef struct s_graphics
 	t_fractal	*fractal;
 }				t_graphics;
 
-void			input_handling(int argc, char **argv, t_fractal *fractal);
-int				close_window(t_graphics *graphics);
-void			init_fractal(t_fractal *fractal);
-void			init_graphics(t_graphics *graphics, t_fractal *fractal);
-void			render_fractal(t_graphics *graphics);
-int				key_handler(int keycode, t_graphics *graphics);
-int				mouse_handler(int button, int x, int y, t_graphics *graphics);
-void			error_exit(char *message);
-void			free_graphics(t_graphics *graphics);
+void			ft_input_handling(int argc, char **argv, t_fractal *fractal);
+int				ft_close_window(t_graphics *graphics);
+void			ft_init_fractal(t_fractal *fractal);
+void			ft_init_graphics(t_graphics *graphics, t_fractal *fractal);
+void			ft_render_fractal(t_graphics *graphics);
+int				ft_key_handler(int keycode, t_graphics *graphics);
+int				ft_mouse_handler(int button, int x, int y, t_graphics *graphics);
+void			ft_error_exit(char *message);
+void			ft_free_graphics(t_graphics *graphics);
 int				ft_get_pixel_color(t_graphics *graphics, t_complex c);
 int				ft_calculate_burning_ship(t_complex c, int max_iterations);
 int				ft_calculate_julia(t_complex z, t_fractal *fractal);

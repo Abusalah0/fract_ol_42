@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:59:48 by abdsalah          #+#    #+#             */
-/*   Updated: 2024/11/29 19:33:26 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 09:52:55 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ and (1 - t) * (1 - t) * (1 - t) * t are designed to give different color
 transitions for red, green, and blue components.
 The constants (9, 15, 8.5) adjust the intensity of the color components.
 */
-static int	get_color(int color, t_fractal *fractal)
+static int	ft_get_color(int color, t_fractal *fractal)
 {
 	double	t;
 	int		red;
@@ -57,7 +57,7 @@ int	ft_get_pixel_color(t_graphics *graphics, t_complex c)
 		color = 0x000000;
 	else
 	{
-		color = get_color(color, graphics->fractal);
+		color = ft_get_color(color, graphics->fractal);
 	}
 	return (color);
 }

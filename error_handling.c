@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 00:43:43 by abdsalah          #+#    #+#             */
-/*   Updated: 2024/11/30 14:55:08 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 09:53:18 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include "libft/libft.h"
 #include <stdio.h>
 
-int	close_window(t_graphics *graphics)
+int	ft_close_window(t_graphics *graphics)
 {
-	free_graphics(graphics);
+	ft_free_graphics(graphics);
 	exit(0);
 }
 
-void	error_exit(char *message)
+void	ft_error_exit(char *message)
 {
 	ft_putendl_fd(message, 2);
 	exit(EXIT_FAILURE);
 }
 
-void	free_graphics(t_graphics *graphics)
+void	ft_free_graphics(t_graphics *graphics)
 {
 	if (graphics->img)
 	{
