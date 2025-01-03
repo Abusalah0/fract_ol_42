@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:59:48 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/03 09:52:55 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 10:07:16 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,27 @@ static int	ft_get_color(int color, t_fractal *fractal)
 	color = (red << 16) | (green << 8) | blue;
 	return (color);
 }
-
+/*
+** ft_get_pixel_color
+**
+** Description:
+** Determines the color of a pixel in the fractal based on the fractal type and
+** the number of iterations required for the point to escape the fractal's bounds.
+** Uses color gradients for smooth and visually appealing transitions.
+**
+** Parameters:
+** - graphics: Pointer to the graphics structure containing fractal data, including
+**             the fractal type, maximum iterations, and other rendering parameters.
+** - c: A complex number representing the point in the complex plane
+**      corresponding to the pixel being calculated.
+**
+** Returns:
+** - An integer representing the RGB color value of the pixel.
+**
+** Notes:
+** - The iteration count is mapped to the maximum iterations to normalize the gradient.
+** - Points that remain bounded (inside the fractal) are assigned a black color (0x000000).
+*/
 int	ft_get_pixel_color(t_graphics *graphics, t_complex c)
 {
 	int	color;
