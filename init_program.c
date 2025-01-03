@@ -6,12 +6,16 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 00:42:40 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/03 09:58:48 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 10:19:27 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract_ol.h"
-
+/*
+** ft_init_fractal
+** ---------------
+** Initializes the fractal structure with default values.
+*/
 void	ft_init_fractal(t_fractal *fractal)
 {
 	fractal->shift_x = 0.0;
@@ -21,7 +25,11 @@ void	ft_init_fractal(t_fractal *fractal)
 	fractal->julia_re = -0.512511498387847167;
 	fractal->julia_im = 0.521295573094847167;
 }
-
+/*
+** ft_init_graphics_struct
+** -----------------------
+** Initializes the graphics structure with NULL values.
+*/
 static void	ft_init_graphics_struct(t_graphics *graphics)
 {
 	graphics->mlx = NULL;
@@ -33,7 +41,13 @@ static void	ft_init_graphics_struct(t_graphics *graphics)
 	graphics->endian = 0;
 	graphics->fractal = NULL;
 }
-
+/*
+** ft_free_graphics
+** ----------------
+** intiliaze the graphics structure with the MLX connection, window, image
+** and the data address for the image
+** also set graphics->fractal pointer to the fractal structure.
+*/
 void	ft_init_graphics(t_graphics *graphics, t_fractal *fractal)
 {
 	ft_init_graphics_struct(graphics);
@@ -61,7 +75,11 @@ void	ft_init_graphics(t_graphics *graphics, t_fractal *fractal)
 	}
 	graphics->fractal = fractal;
 }
-
+/*
+** ft_input_handling
+** -----------------
+** Validates the command-line arguments and sets the fractal name.
+*/
 void	ft_input_handling(int argc, char **argv, t_fractal *fractal)
 {
 	if (argc != 2)
