@@ -59,7 +59,6 @@ The following fractals are supported by `fract_ol`:
 - **Mandelbrot Set**: A set of complex numbers that produces a famous fractal.
 - **Julia Set**: A family of fractals that are closely related to the Mandelbrot set.
 - **Burning Ship**: A fractal that is similar to the Mandelbrot set but with a different mathematical formulation.
-- **Additional fractals (if applicable)**: [Describe any other fractals supported by your project].
 
 ## Equations
 
