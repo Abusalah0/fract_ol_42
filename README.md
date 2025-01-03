@@ -104,7 +104,3 @@ Contributions are welcome! If you have ideas for new features, improvements, or 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ## Note
 this guide is AI generated, i will write a better one with pictures and helpfule resources in the upcoming weeks
-
----
-
-This template includes details on installation, usage, the mathematical equations, and general structure. You can adapt it further depending on your implementation and any additional features you may have.
