@@ -65,19 +65,6 @@ The following fractals are supported by `fract_ol`:
 - **Burning Ship**: A fractal that is similar to the Mandelbrot set but with a different mathematical formulation.
 - **Additional fractals (if applicable)**: [Describe any other fractals supported by your project].
 
-## Code Structure
-
-- `src/`: Contains the core source files of the program.
-  - `main.c`: Entry point of the program.
-  - `fractals.c`: Functions for generating different fractals.
-  - `utils.c`: Helper functions for mathematical calculations and graphical rendering.
-  - `events.c`: Functions for handling user inputs and window events.
-
-- `includes/`: Header files for the project.
-  - `fractol.h`: Main header file defining the fractal functions, constants, and structures.
-
-- `Makefile`: The build system for compiling the project.
-
 ## Equations
 
 Here are the key mathematical equations used to generate the fractals:
