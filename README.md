@@ -1,7 +1,3 @@
-Here's a detailed README template for your `fract_ol` project:
-
----
-
 # fract_ol
 
 ## Overview
