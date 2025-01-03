@@ -6,7 +6,7 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 01:04:41 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/03 09:53:42 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 14:11:21 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,16 @@ int				ft_calculate_mandelbrot(t_complex c, int max_iterations);
 #endif
 /*
 /------------------\ lower
-| | memory
-| Text | addresses
-| |
+|					| memory
+| 		Text		| addresses
+|					|
 |------------------|
-| (Initialized) |
-| Data |
-| (Uninitialized) |
+|	(Initialized) 	|
+| 		Data		|
+| (Uninitialized)  |
 |------------------|
-| |
-| Stack | higher
-| | memory
+|					|
+|		Stack		| higher
+| 					| memory
 \------------------/ addresses
 */
