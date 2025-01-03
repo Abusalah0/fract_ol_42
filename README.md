@@ -102,6 +102,8 @@ Contributions are welcome! If you have ideas for new features, improvements, or 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Note
+this guide is AI generated, i will write a better one with pictures and helpfule resources in the upcoming weeks
 
 ---
 
