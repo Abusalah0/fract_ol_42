@@ -80,16 +80,16 @@ int				ft_calculate_mandelbrot(t_complex c, int max_iterations);
 #endif
 /*
 /------------------\ lower
-|					| memory
-| 		Text		| addresses
-|					|
+|		   | memory
+|	Text	   | addresses
+|		   |
 |------------------|
-|	(Initialized) 	|
-| 		Data		|
+|  (Initialized)   |
+| 	Data       |
 | (Uninitialized)  |
 |------------------|
-|					|
-|		Stack		| higher
-| 					| memory
+| 		   |
+| Stack		   | higher
+| 		   | memory
 \------------------/ addresses
 */
