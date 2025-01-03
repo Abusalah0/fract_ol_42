@@ -78,3 +78,18 @@ int				ft_calculate_julia(t_complex z, t_fractal *fractal);
 int				ft_calculate_mandelbrot(t_complex c, int max_iterations);
 
 #endif
+/*
+/------------------\ lower
+| | memory
+| Text | addresses
+| |
+|------------------|
+| (Initialized) |
+| Data |
+| (Uninitialized) |
+|------------------|
+| |
+| Stack | higher
+| | memory
+\------------------/ addresses
+*/
