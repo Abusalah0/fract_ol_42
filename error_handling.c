@@ -6,13 +6,11 @@
 /*   By: abdsalah <abdsalah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 00:43:43 by abdsalah          #+#    #+#             */
-/*   Updated: 2025/01/03 09:53:18 by abdsalah         ###   ########.fr       */
+/*   Updated: 2025/01/03 10:08:12 by abdsalah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract_ol.h"
-#include "libft/libft.h"
-#include <stdio.h>
 
 int	ft_close_window(t_graphics *graphics)
 {
