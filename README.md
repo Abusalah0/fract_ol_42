@@ -46,12 +46,6 @@
 
 After running the program, you will see a window with a graphical representation of a fractal. You can interact with the fractal using the following controls:
 
-- **Zoom in:** Use the mouse scroll wheel or press the `+` key.
-- **Zoom out:** Use the mouse scroll wheel or press the `-` key.
-- **Move view:** Click and drag to move the fractal view around.
-- **Change fractal:** Use the arrow keys to switch between supported fractals.
-- **Exit:** Press `ESC` or close the window.
-
 ## Supported Fractals
 
 The following fractals are supported by `fract_ol`:
