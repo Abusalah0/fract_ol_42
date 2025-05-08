@@ -1,42 +1,47 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
-MLX_FLAGS = -lmlx -lXext -lX11 -lm
-MAKEFLAGS += --no-print-directory
-SRC = main.c fractals.c key_events.c init_program.c error_handling.c color.c
-OBJ_DIR = ./obj
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
-NAME = mandelbrot
+CFLAGS = -Wall -Werror -Wextra -g -Iinclude
+NAME = fractol
 
-LIBFT_DIR = ./libft
+LIBFT_DIR = libft
+LDFLAGS = -L$(LIBFT_DIR) -lft -lmlx -lX11 -lXext -lm
 LIBFT = $(LIBFT_DIR)/libft.a
-LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
 
-all: $(NAME) libft
+SRC_DIR = src
+OBJS_DIR = objs
 
-$(NAME): $(OBJ) #$(LIBFT)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(MLX_FLAGS) $(LIBFT_FLAGS)
+SRC =  	color.c \
+		error_handling.c \
+		fractals.c \
+		init_program.c \
+		key_events.c \
+		main.c \
 
-libft:
-	@$(MAKE) -C $(LIBFT_DIR)
-#$(LIBFT):
-#	$(MAKE) -C $(LIBFT_DIR)
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
+OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
-$(OBJ_DIR)/%.o: %.c fract_ol.h
-	@mkdir -p $(OBJ_DIR)
+all: $(NAME)
+
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
+
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
+
+$(OBJS_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJS_DIR)
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean: clean_libft
-	rm -rf $(OBJ_DIR)
+$(OBJS_DIR):
+	@mkdir -p $(OBJS_DIR)
 
-fclean: clean fclean_libft
-	rm -rf $(NAME)
-
-clean_libft:
+clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
+	rm -rf $(OBJS_DIR)
 
-fclean_libft:
+fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all re clean fclean clean_libft fclean_libft libft
+.PHONY: all clean fclean re

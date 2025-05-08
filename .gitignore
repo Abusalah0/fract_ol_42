@@ -1,0 +1,4 @@
+*.o
+objs
+fractol
+libft.a
