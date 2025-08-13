@@ -26,7 +26,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fract_ol.git
+   git clone https://github.com/Abusalah0/fract_ol_42.git
    cd fract_ol
    ```
 
