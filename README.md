@@ -92,9 +92,7 @@ Notes:
 
 All three fractals use an iterative map in the complex plane and the same escape radius check:
 
-$$
-|z_n|^2 = \operatorname{Re}(z_n)^2 + \operatorname{Im}(z_n)^2 > 4
-$$
+`|z_n|^2 = Re(z_n)^2 + Im(z_n)^2 > 4`
 
 If a point does not escape before `MAX_ITER`, it is treated as inside the set and drawn black.
 
@@ -102,15 +100,11 @@ If a point does not escape before `MAX_ITER`, it is treated as inside the set an
 
 Recurrence:
 
-$$
-z_{n+1} = z_n^2 + c
-$$
+`z_(n+1) = z_n^2 + c`
 
 In this implementation, the initial value is set as:
 
-$$
-z_0 = c
-$$
+`z_0 = c`
 
 Then iterate until escape or max iterations.
 
@@ -118,42 +112,32 @@ Then iterate until escape or max iterations.
 
 Recurrence:
 
-$$
-z_{n+1} = z_n^2 + k
-$$
+`z_(n+1) = z_n^2 + k`
 
-- $z_0$ is the mapped pixel coordinate.
-- $k$ is a constant (`julia_re`, `julia_im`), initialized to:
-   - $k_r = -0.512511498387847167$
-   - $k_i = 0.521295573094847167$
+- `z_0` is the mapped pixel coordinate.
+- `k` is a constant (`julia_re`, `julia_im`), initialized to:
+   - `k_r = -0.512511498387847167`
+   - `k_i = 0.521295573094847167`
 
-For Julia mode, left click updates $k$ from the cursor point to explore different Julia shapes interactively.
+For Julia mode, left click updates `k` from the cursor point to explore different Julia shapes interactively.
 
 ### Burning Ship
 
 Recurrence:
 
-$$
-z_{n+1} = (|\operatorname{Re}(z_n)| + i|\operatorname{Im}(z_n)|)^2 + c
-$$
+`z_(n+1) = (|Re(z_n)| + i|Im(z_n)|)^2 + c`
 
 Absolute values before squaring create the characteristic "ship" geometry.
 
 ### Coloring (escape-time gradient)
 
-For iteration ratio $t = \frac{\text{iter}}{\text{max\_iter}}$, RGB is computed with polynomial curves:
+For iteration ratio `t = iter / max_iter`, RGB is computed with polynomial curves:
 
-$$
-R = 9(1-t)t^3 \cdot 255
-$$
+`R = 9(1 - t)t^3 * 255`
 
-$$
-G = 15(1-t)^2 t^2 \cdot 255
-$$
+`G = 15(1 - t)^2 t^2 * 255`
 
-$$
-B = 8.5(1-t)^3 t \cdot 255
-$$
+`B = 8.5(1 - t)^3 t * 255`
 
 Then packed as `(R << 16) | (G << 8) | B`.
 
@@ -166,13 +150,9 @@ High-level loop:
 3. Initialize MLX context, window, image buffer.
 4. For each pixel `(x, y)`, map to complex plane:
 
-$$
-c_r = \frac{(x - W/2)\cdot4}{W\cdot zoom} + shift_x
-$$
+`c_r = ((x - W/2) * 4) / (W * zoom) + shift_x`
 
-$$
-c_i = \frac{(y - H/2)\cdot4}{W\cdot zoom} + shift_y
-$$
+`c_i = ((y - H/2) * 4) / (W * zoom) + shift_y`
 
 5. Compute iteration count using selected fractal function.
 6. Convert count to color and write into image buffer.
