@@ -1,4 +1,4 @@
-CC = cc
+# CC = clang
 CFLAGS = -Wall -Werror -Wextra -g -Iinclude
 NAME = fractol
 
